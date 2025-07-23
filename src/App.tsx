@@ -3,6 +3,7 @@ import { useReducer } from "react";
 import { activityReducer, initialState } from "./reducers/activity-reducer";
 import ActivityList from "./components/ActivityList";
 
+
 const App = () => {
   const [state, dispatch] = useReducer(activityReducer, initialState);
   return (
@@ -17,13 +18,17 @@ const App = () => {
 
       <section className="bg-orange-500 py-20 px-5">
         <div className="max-w-4xl mx-auto ">
-          <Form dispatch={dispatch} />
+          <Form 
+          dispatch={dispatch}
+          state={state}
+          />
         </div>
       </section>
 
       <section className="p-10 mx-auto max-w-4xl">
         <ActivityList
         activities = {state.activities}
+        dispatch={dispatch}
         />
       </section>
     </>
