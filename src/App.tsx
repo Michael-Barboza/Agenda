@@ -8,30 +8,34 @@ const App = () => {
   const [state, dispatch] = useReducer(activityReducer, initialState);
   return (
     <>
-      <header className="bg-orange-600 text-white p-4">
-        <div className="max-w-4xl mx-auto flex justify-between">
-          <h1 className="text-center text-lg font-bold text-white uppercase">
-            Agenda de Actividades
-          </h1>
-        </div>
-      </header>
+     <header className="bg-orange-800 text-white p-4">
+  <div className="flex justify-center">
+    <h1 className="text-lg font-bold uppercase">
+      Agenda de Actividades
+    </h1>
+  </div>
+</header>
 
-      <section className="bg-orange-500 py-20 px-5">
-        <div className="max-w-4xl mx-auto ">
-          <Form 
-          dispatch={dispatch}
-          state={state}
-          />
-        </div>
-      </section>
-
-      <section className="p-10 mx-auto max-w-4xl">
-        <ActivityList
-        activities = {state.activities}
+<div className="flex w-full bg-orange-800">
+  <section className="mb-10  px-5 w-1/2">
+    <div className="mx-auto">
+      <Form 
         dispatch={dispatch}
-        />
-      </section>
-    </>
+        state={state}
+      />
+    </div>
+  </section>
+
+  <section className="mb-10 mr-5 w-1/2 space-y-4 bg-white shadow p-10 rounded-lg ">
+    <ActivityList
+      activities={state.activities}
+      dispatch={dispatch}
+    />
+  </section>
+</div>
+
+
+</>
   );
 };
 

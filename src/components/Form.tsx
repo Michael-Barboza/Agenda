@@ -69,7 +69,7 @@ const Form = ({ dispatch, state }: FormProps) => {
       <h1 className="text-2xl font-bold text-center mb-5">
         Registro de Actividades
       </h1>
-      <div className=" grid grid-cols-2 justify-center px-36  ">
+      <div className=" flex justify-center  ">
         <div>
           <label htmlFor="category">Categoria:</label>
           <select
